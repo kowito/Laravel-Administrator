@@ -6,9 +6,10 @@
 	<title>{{ Config::get('administrator::administrator.title') }}</title>
 
 	@foreach ($css as $url)
-		<link href="{{$url}}" media="all" type="text/css" rel="stylesheet">
+	{{ HTML::style($url) }}
 	@endforeach
-
+	{{ HTML::style('//fezvrasta.github.io/snackbarjs/dist/snackbar.min.css') }}
+	{{ HTML::style('//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css') }}
 	<!--[if lte IE 9]>
 		<link href="{{asset('packages/frozennode/administrator/css/browsers/lte-ie9.css')}}" media="all" type="text/css" rel="stylesheet">
 	<![endif]-->
@@ -59,5 +60,7 @@
 	@foreach ($js as $url)
 		<script src="{{$url}}"></script>
 	@endforeach
+	{{ HTML::script('//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js') }}
+
 </body>
 </html>

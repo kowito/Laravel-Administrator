@@ -1,7 +1,7 @@
 @if (is_array($item))
-	<li class="menu">
-		<span>{{$key}}</span>
-		<ul>
+	<li class="dropdown">
+		<a href="javascript:void(0)" class="dropdown-toggle withripple" data-toggle="dropdown">{{$key}} <b class="caret"></b><div class="ripple-wrapper"></div></a>
+		<ul class="dropdown-menu">
 			@foreach ($item as $k => $subitem)
 				<?php echo View::make("administrator::partials.menu_item", array(
 					'item' => $subitem,
@@ -13,9 +13,9 @@
 		</ul>
 	</li>
 @else
-	<li class="item">
+	<li>
 		@if (strpos($key, $settingsPrefix) === 0)
-			<a href="{{URL::route('admin_settings', array(substr($key, strlen($settingsPrefix))))}}">{{$item}}</a>
+			<a href="{{URL::route('admin_settings', array(substr($key, strlen($settingsPrefix))))}}" class=" withripple">{{$item}}<div class="ripple-wrapper"></div></a>
 		@elseif (strpos($key, $pagePrefix) === 0)
 			<a href="{{URL::route('admin_page', array(substr($key, strlen($pagePrefix))))}}">{{$item}}</a>
 		@else

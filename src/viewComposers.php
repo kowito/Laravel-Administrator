@@ -90,6 +90,9 @@ View::composer(array('administrator::layouts.default'), function($view)
 
 	//add the package-wide css assets
 	$view->css += array(
+		'ripples' => asset('packages/frozennode/administrator/css/ripples.min.css'),
+		'material' => asset('packages/frozennode/administrator/css/material.min.css'),
+		'material-wfont' => asset('packages/frozennode/administrator/css/material-wfont.min.css'),
 		'customscroll' => asset('packages/frozennode/administrator/js/jquery/customscroll/customscroll.css'),
 		'main' => asset('packages/frozennode/administrator/css/main.css'),
 	);
@@ -103,6 +106,9 @@ View::composer(array('administrator::layouts.default'), function($view)
 			'ckeditor' => asset('packages/frozennode/administrator/js/ckeditor/ckeditor.js'),
 			'ckeditor-jquery' => asset('packages/frozennode/administrator/js/ckeditor/adapters/jquery.js'),
 			'markdown' => asset('packages/frozennode/administrator/js/markdown.js'),
+			'plupload' => asset('packages/frozennode/administrator/js/plupload/js/plupload.full.js'),
+
+			'plupload' => asset('packages/frozennode/administrator/js/plupload/js/plupload.full.js'),
 			'plupload' => asset('packages/frozennode/administrator/js/plupload/js/plupload.full.js'),
 		);
 
@@ -131,7 +137,16 @@ View::composer(array('administrator::layouts.default'), function($view)
 			'history' => asset('packages/frozennode/administrator/js/history/native.history.js'),
 			'admin' => asset('packages/frozennode/administrator/js/admin.js'),
 			'settings' => asset('packages/frozennode/administrator/js/settings.js'),
+
+
 		);
+
+		//material js assets
+		$view->js += array(
+			'material' => asset('packages/frozennode/administrator/js/material.min.js'),
+			'ripples' => asset('packages/frozennode/administrator/js/ripples.min.js'),
+		);
+
 	}
 
 	$view->js += array('page' => asset('packages/frozennode/administrator/js/page.js'));
