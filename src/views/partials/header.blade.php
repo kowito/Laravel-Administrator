@@ -21,6 +21,7 @@
 <header>
 	<a href="#" id="menu_button"><div></div></a>
 	<a href="#" id="filter_button" class="{{$configType === 'model' ? '' : 'hidden'}}"><div></div></a>
+
 	<div id="right_nav">
 		@if (count(Config::get('administrator::administrator.locales')) > 0)
 			<ul id="lang_menu">

@@ -1,4 +1,4 @@
-<div id="admin_page" class="with_sidebar">
+ <div id="admin_page" class="with_sidebar">
 	<div id="sidebar">
 		<div class="panel sidebar_section" id="filters_sidebar_section" data-bind="template: 'filtersTemplate'"></div>
 	</div>
