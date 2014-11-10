@@ -1,3 +1,6 @@
+<div class="page-header" id="header">
+    <img src="http://localhost:8000/assets/logo.png" class="logo" alt="OSGD - Hospital">
+</div>
 <div class="bs-component">
 	<div class="navbar navbar-default">
 		<div class="navbar-header">
@@ -14,18 +17,13 @@
 					@include('administrator::partials.menu_item')
 				@endforeach
 			</ul>
-		</div>
-	</div>
-</div>
 
-<header>
-	<a href="#" id="menu_button"><div></div></a>
-	<a href="#" id="filter_button" class="{{$configType === 'model' ? '' : 'hidden'}}"><div></div></a>
-
-	<div id="right_nav">
-		@if (count(Config::get('administrator::administrator.locales')) > 0)
-			<ul id="lang_menu">
-				<li class="menu">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#" id="menu_button"><div></div></a></li>
+				<li><a href="#" id="filter_button" class="{{$configType === 'model' ? '' : 'hidden'}}"><div></div></a></li>
+				@if (count(Config::get('administrator::administrator.locales')) > 0)
+				
+				<li id="lang_menu" class="dropdown">
 				<span>{{Config::get('app.locale')}}</span>
 					@if (count(Config::get('administrator::administrator.locales')) > 1)
 						<ul>
@@ -39,11 +37,21 @@
 						</ul>
 					@endif
 				</li>
-			</ul>
-		@endif
+				
+				@endif
 
-		@if(Config::get('administrator::administrator.logout_path'))
-			<a href="{{URL::to(Config::get('administrator::administrator.logout_path'))}}" id="logout">{{trans('administrator::administrator.logout')}}</a>
-		@endif
+				@if(Config::get('administrator::administrator.logout_path'))
+				<a href="{{URL::to(Config::get('administrator::administrator.logout_path'))}}" id="logout">{{trans('administrator::administrator.logout')}}</a>
+				@endif
+			</ul>
+		</div>
 	</div>
-</header>
+</div>
+
+
+
+
+
+
+
+
